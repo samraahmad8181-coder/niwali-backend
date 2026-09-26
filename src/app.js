@@ -19,7 +19,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: "https://niwali-frontend.vercel.app/",
+        origin: "https://niwali-frontend.vercel.app",
         credentials: true,
     })
 );
