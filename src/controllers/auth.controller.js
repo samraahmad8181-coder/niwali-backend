@@ -8,9 +8,9 @@ const { uploadsDir } = require('../../config/paths');
 // Helper to set cookie options cleanly
 const cookieOptions = {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: 24 * 60 * 60 * 1000 // 1 day
+    secure: true,              // must be true when sameSite is 'none' — cannot be conditional anymore
+    sameSite: 'none',          // required for cross-site cookies
+    maxAge: 24 * 60 * 60 * 1000
 };
 
 // Signup now sets the cookie automatically upon account creation
