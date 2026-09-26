@@ -17,9 +17,20 @@ const app = express();
 // CORS
 // ===============================
 
+const allowedOrigins = [
+    "http://localhost:5174",
+    "https://budget-tracker-frontend-git-main-samraahmad8181-6269s-projects.vercel.app",
+];
+
 app.use(
     cors({
-        origin: "https://niwali-frontend.vercel.app/",
+        origin: function (origin, callback) {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
         credentials: true,
     })
 );
