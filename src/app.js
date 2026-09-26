@@ -19,7 +19,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: https://niwali-frontend-git-main-samraahmad8181-6269s-projects.vercel.app",
+        origin: "http://localhost:5173",
         credentials: true,
     })
 );
